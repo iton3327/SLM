@@ -80,7 +80,7 @@ void loop(){
       customKey = customKeypad.getKey();
     }
     pressed += customKey;
-    Serial.print(customKey);
+    Serial.print('*');
     customKey = NULL;
   }
   
