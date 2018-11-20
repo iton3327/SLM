@@ -92,6 +92,7 @@ void loop(){
     stateInvalid();
   }else{
     stateConfirm("FakeCustomer");
+    delay(2000);
   }
 
 }
