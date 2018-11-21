@@ -68,12 +68,12 @@ void stateConfirm(String username){
 
 void setup(){
   Serial.begin(921600);
-  quere<int> Q;
 }
   
 void loop(){
   
   stateStart();
+  queue<int> q;
   char customKey = NULL;
   String service_key = "111111";  //Test reference service key
   String pressed = "";
