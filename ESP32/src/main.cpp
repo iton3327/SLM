@@ -98,6 +98,7 @@ void loop(){
   if(pressed != service_key){
     stateInvalid();
   }else{
+    q.erase(q.begin());
     stateConfirm("FakeCustomer");
     delay(2000);
   }
