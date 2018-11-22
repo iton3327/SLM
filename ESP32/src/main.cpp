@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <iostream> 
-#include <queue>
+#include <vector>
 /* @file CustomKeypad.pde
 || @version 1.0
 || @author Alexander Brevig
@@ -11,6 +11,7 @@
 || #
 */
 #include <Keypad.h>
+using namespace std;
 
 const byte ROWS = 4; //four rows
 const byte COLS = 4; //four columns
@@ -69,21 +70,24 @@ void stateConfirm(String username){
 void setup(){
   Serial.begin(921600);
 }
-  
+
+vector<string> q = {"111111","222222"};
+
 void loop(){
-  
+
   stateStart();
-  // queue<int> q;
   char customKey = NULL;
-  String service_key = "111111";  //Test reference service key
-  String pressed = "";
+
+  auto itr = q.begin();
+  string service_key = *itr;  //Test reference service key
+  string pressed = "";
 
   for (int i=0 ; i<6 ; i++){
     while(!customKey){
       customKey = customKeypad.getKey();
     }
     pressed += customKey;
-    Serial.print('*');
+    Serial.print(customKey);
     customKey = NULL;
   }
   
