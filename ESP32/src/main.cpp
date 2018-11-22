@@ -73,7 +73,7 @@ void setup(){
 void loop(){
   
   stateStart();
-  queue<int> q;
+  // queue<int> q;
   char customKey = NULL;
   String service_key = "111111";  //Test reference service key
   String pressed = "";
